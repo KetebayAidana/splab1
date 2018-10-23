@@ -20,7 +20,7 @@ x=$element/1359809
 array[$c]=$result
 let "c += 1"
 done
-for ((i=0;i<${#array[@]};++i)); do
+for ((i=0;i<10;++i)); do
 echo   "${a[i]}" - "${b[i]}"  - "${array[i]}"
 done
 grep world $1
