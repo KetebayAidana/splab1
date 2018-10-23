@@ -8,12 +8,14 @@ a=($(grep '"http://www.*" ' log.txt | cut -d ' ' -f11 log.txt| sed '/^"-/d'  ));
 b=($(cut -f10 -d' ' log.txt| sed '/^"-/d' | sort -k1 -nr |head -n 10));
 for element in "${b[@]}"
 do
-result=$((element*100 / 1359809))
-x=$element/1359809
+result=$((element*100 / ${b[0]}))
+x=$element/${b[0]}
 array[$c]=$result
 let "c += 1"
 done
 for ((i=0;i<10;++i)); do
 echo   "${a[i]}" - "${b[i]}"  - "${array[i]}"
 done
+
+
 
