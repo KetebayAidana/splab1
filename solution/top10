@@ -1,6 +1,7 @@
 # run this script as "top10 log.txt"
 # here comes your solution
 # e.g.
+#var1
 #! /bin/bash
 $c, $array[@];
 a=($(grep '"http://www.*" ' log.txt | cut -d ' ' -f11 log.txt| sed '/^"-/d'  ));
