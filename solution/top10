@@ -5,3 +5,30 @@
 # here comes your solution
 # e.g.
 grep world $1
+
+
+
+#! /bin/bash
+$c
+$array
+a=($(grep '"http://www.*" ' log.txt | cut -d ' ' -f11 log.txt| sed '/^"-/d'))
+b=($(cut -f10 -d' ' log.txt| sed '/^"-/d' | sort -k1 -nr |head -n 10))
+for element in "${b[@]}" 
+	do
+		let "v += element"
+	done
+	#echo "$v" 
+for element in "${b[@]}" 
+	do
+		result=$(((element*100 ) / $v))
+		array[$c]=$result
+		let "total += ${array[$c]}"
+		let "c += 1"
+	done
+	#echo "$total"
+for ((i=0;i<10;++i))
+	do	
+	let "k += 1"
+	echo   "$k."  "${a[i]}" - "${b[i]}"  - "${array[i]}"
+done
+
